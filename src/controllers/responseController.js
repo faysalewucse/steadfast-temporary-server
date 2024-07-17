@@ -1,8 +1,8 @@
 const errorResponse = (
   res,
-  { statusCode = 500, message = "Internal Server Error" }
+  { status = 500, message = "Internal Server Error" }
 ) => {
-  return res.status(statusCode).json({
+  return res.status(status).json({
     success: false,
     message,
   });
@@ -10,12 +10,12 @@ const errorResponse = (
 
 const successResponse = (
   res,
-  { statusCode = 200, message = "Success", payload = {} }
+  { status = 200, message = "Success", consignment = {} }
 ) => {
-  return res.status(statusCode).json({
+  return res.status(status).json({
     success: true,
     message,
-    payload,
+    consignment,
   });
 };
 
