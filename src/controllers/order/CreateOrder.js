@@ -11,6 +11,8 @@ const createOrder = async (req, res, next) => {
       note,
     } = req.body;
 
+    console.log(req.body);
+
     return successResponse(res, {
       statusCode: 200,
       message: "Consignment has been created successfully.",
