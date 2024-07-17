@@ -16,18 +16,16 @@ const createOrder = async (req, res, next) => {
     return successResponse(res, {
       statusCode: 200,
       message: "Consignment has been created successfully.",
-      payload: {
-        consignment: {
-          consignment_id: new Date().getMilliseconds(),
-          invoice: invoice,
-          tracking_code: "15BAEB8A",
-          recipient_name,
-          recipient_phone,
-          recipient_address,
-          cod_amount,
-          status: "in_review",
-          note,
-        },
+      consignment: {
+        consignment_id: new Date().getMilliseconds(),
+        invoice: invoice,
+        tracking_code: "15BAEB8A",
+        recipient_name,
+        recipient_phone,
+        recipient_address,
+        cod_amount,
+        status: "in_review",
+        note,
       },
     });
   } catch (error) {
