@@ -13,7 +13,7 @@ rootRouter.get("/", (req, res) => {
       message: "Welcome to the SteadFast Temporary API",
       version: "1.0.0",
       description:
-        "This API provides access to Sulaiman BD's data and operations.",
+        "This API provides access to steadfast and operations.",
       timestamp: new Date(),
     },
   });
