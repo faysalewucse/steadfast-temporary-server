@@ -10,7 +10,7 @@ rootRouter.get("/", (req, res) => {
     message: "API information fetched successfully",
     payload: {
       status: "success",
-      message: "Welcome to the Panjabi Clothes API",
+      message: "Welcome to the SteadFast Temporary API",
       version: "1.0.0",
       description:
         "This API provides access to Sulaiman BD's data and operations.",
