@@ -9,7 +9,7 @@ const mongoSanitize = require("express-mongo-sanitize");
 const { errorResponse } = require("./controllers/responseController");
 const rootRouter = require("./routers/rootRouter");
 const orderRouter = require("./routers/invoiceRouter");
-
+const statusRouter = require("./routers/statusRouter");
 
 const app = express();
 
@@ -28,7 +28,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(helmet());
 app.use(mongoSanitize());
 
-app.use("/api/v1/order", orderRouter);
+app.use("/api/v1/create_order", orderRouter);
+app.use("/api/v1/status_by_cid", statusRouter);
 app.use("/api/v1", rootRouter); // Use the new router
 
 // Client error handler
