@@ -1,5 +1,4 @@
 const { body } = require("express-validator");
-const Order = require("../models/Order");
 
 const invoiceValidator = [
   body("invoice")
@@ -12,14 +11,7 @@ const invoiceValidator = [
     .matches(/^[a-zA-Z0-9-_]+$/)
     .withMessage(
       "Invoice can be alpha-numeric including hyphens and underscores"
-    )
-    .custom(async (value) => {
-      const order = await Order.findOne({ invoice: value });
-      if (order) {
-        throw new Error("Invoice must be unique");
-      }
-      return true;
-    }),
+    ),
 
   body("recipient_name")
     .isString()

@@ -1,10 +1,8 @@
-const { successResponse } = require("../responseController");
-
 const createBulkOrder = async (req, res, next) => {
   try {
     const orders = req.body;
 
-    const consignments = orders.map(order => {
+    const consignments = orders.map((order) => {
       const {
         invoice,
         recipient_name,
@@ -27,11 +25,7 @@ const createBulkOrder = async (req, res, next) => {
       };
     });
 
-    console.log(consignments);
-
-    return res.status(200).json(
-      consignments
-    );
+    return res.status(200).json(consignments);
   } catch (error) {
     next(error);
   }
